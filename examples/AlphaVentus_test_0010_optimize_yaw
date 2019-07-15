@@ -19,6 +19,7 @@ import floris.tools.cut_plane as cp
 from floris.tools.optimization import optimize_yaw
 import numpy as np
 import json
+import os
 
 
 print('Running FLORIS with no yaw...')
@@ -40,9 +41,36 @@ layout_x = [
         800.0,
         1600.0
       ]
-layout_y = [0, 0, 0]
+layout_y = [
+        0.0,
+        0.0,
+        0.0,
+        800.0,
+		800.0,
+		800.0,
+		1600.0,
+		1600.0,
+		1600.0,
+		2400.0,
+		2400.0,
+		2400.0
+      ]
 fi.reinitialize_flow_field(layout_array=(layout_x, layout_y))
 fi.calculate_wake()
+
+#Importing the data from the .json file as python variables
+with open('AlphaVentus_test_input.json', 'r') as file:
+	data = json.load(file)
+
+	farm = data["farm"]
+	properties = farm["properties"]
+	farmname = farm["name"]
+	farmdescription = farm["description"]
+	wind_dir = properties["wind_direction"]
+	wind_speed = properties["wind_speed"]
+	layoutx = properties["layout_x"]
+	layouty = properties["layout_y"]
+
 
 # initial power output
 power_initial = np.sum(fi.get_turbine_power())
