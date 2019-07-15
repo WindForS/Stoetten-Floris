@@ -105,6 +105,9 @@ for i in range(len(yaw_angles)):
 fi.calculate_wake(yaw_angles=yaw_angles)
 power_opt = np.sum(fi.get_turbine_power())
 
+#Creating a power gain variable for power comparison
+power_gain = 100.*(power_opt - power_initial)/power_initial
+
 print('==========================================')
 print('Total Power Gain = %.1f%%' %
       (100.*(power_opt - power_initial)/power_initial))
