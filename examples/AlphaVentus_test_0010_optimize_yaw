@@ -121,6 +121,36 @@ print('==========================================')
 print('Plotting the FLORIS flowfield with yaw...')
 # ================================================================================
 
+
+#Creating a .txt file with the input and output data of the yaw optimization
+with open('AlphaVentus_test_output.txt', 'w') as f:
+	f.write('Data from the wind farm yaw optimization\n')
+	f.write('\n-Farm name: ')
+	f.write(farmname)
+	f.write('\n-Description: ')
+	f.write(farmdescription)
+	f.write('\n-Wind direction (deg): ')
+	f.write(str(wind_dir))
+	f.write('\n-Wind speed (m/s): ')
+	f.write(str(wind_speed))
+	f.write('\n-Wind farm coordinates (in meters):\n')
+	f.write('\n ---X-coordinates:')
+	f.write(str(layoutx))
+	f.write('\n ---Y-coordinates:')
+	f.write(str(layouty))
+	f.write('\n\n-Yaw angles after optimization:\n')
+	f.write(str(yaw_angles))
+	f.write('\n\n-Power before the optimization (MWh per year):')
+	f.write(str(power_initial))
+	f.write('\n-Power after the optimization (MWh per year):')
+	f.write(str(power_opt))
+	f.write('\n\n-Total gain in power production from yaw angle optimization: ')
+	f.write(str(power_gain))
+	f.write(' %')
+
+os.startfile('AlphaVentus_test_output.txt')
+
+
 # Initialize the horizontal cut
 hor_plane = wfct.cut_plane.HorPlane(
     fi.get_hub_height_flow_data(),
