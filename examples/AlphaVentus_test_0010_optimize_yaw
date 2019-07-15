@@ -121,8 +121,13 @@ print('==========================================')
 print('Plotting the FLORIS flowfield with yaw...')
 # ================================================================================
 
+#Rounding the yaw angles to two decimals
+yaw_angles = np.round(yaw_angles, decimals=2)
+power_gain = round(power_gain, 4)
+print(power_gain)
 
-#Creating a .txt file with the input and output data of the yaw optimization
+
+#Creating a .txt file with the input and output data of the yaw optimization and automatically saving it
 with open('AlphaVentus_test_output.txt', 'w') as f:
 	f.write('Data from the wind farm yaw optimization\n')
 	f.write('\n-Farm name: ')
