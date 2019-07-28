@@ -1,0 +1,18 @@
+Data from the wind farm yaw optimization
+
+-Farm name: Alpha Ventus Wind Farm
+-Description: Alpha Ventus is a 3x4 Wind Farm in the German north sea
+-Wind direction (deg): 90.0
+-Wind speed (m/s): 8.0
+-Wind farm coordinates (in meters):
+
+ ---X-coordinates:[0.0, 800.0, 1600.0, 0.0, 800.0, 1600.0, 0.0, 800.0, 1600.0, 0.0, 800.0, 1600.0]
+ ---Y-coordinates:[0.0, 0.0, 0.0, 800.0, 800.0, 800.0, 1600.0, 1600.0, 1600.0, 2400.0, 2400.0, 2400.0]
+
+-Yaw angles after optimization:
+[ 0. 25. 25.  0. 25. 25.  0. 25. 25.  0. 25. 25.]
+
+-Power before the optimization (MWh per year):11736918.291059056
+-Power after the optimization (MWh per year):12836296.458846897
+
+-Total gain in power production from yaw angle optimization: 9.3668 %
